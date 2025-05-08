@@ -11,11 +11,10 @@ class Config:
         self.selection_method = "tournament"
         self.best_selection_amount = 5
         self.tournament_size = 3
-        self.crossover_method = "single_point" 
+        self.crossover_method = "arithmetic"
         self.crossover_probability = 0.8
-        self.mutation_method = "edge" 
+        self.mutation_method = "uniform"
         self.mutation_probability = 0.05
-        self.inversion_probability = 0.1
         self.optimization_type = "min"
 
 config = Config()

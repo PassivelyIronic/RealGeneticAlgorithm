@@ -22,8 +22,8 @@ class MainWindow(Singleton):
         self.root.geometry("300x375")
 
         self.selection_methods = ["Best", "Roulette", "Tournament"]
-        self.cross_methods = ["single_point", "Two_point", "Uniform"]
-        self.mutation_methods = ["single_point", "Two_point", "Edge"]
+        self.cross_methods = ["arithmetic", "linear", "blend_alpha" , "blend_alpha_beta" , "averaging"]
+        self.mutation_methods = ["uniform", "gaussian"]
 
         main_column = tk.Frame(self.root)
         main_column.pack(padx=10, pady=10)
@@ -42,7 +42,6 @@ class MainWindow(Singleton):
             "crossover_probability": config.crossover_probability,
             "mutation_method": config.mutation_method,
             "mutation_probability": config.mutation_probability,
-            "inversion_probability": config.inversion_probability,
             "optimization_type": config.optimization_type
         }
 
@@ -145,16 +144,9 @@ class MainWindow(Singleton):
 
         row13 = tk.Frame(main_column)
         row13.pack(fill="x")
-        tk.Label(row13, text="Inversion Probability").pack(side="left")
-        self.inversion_propability_entry = tk.Entry(row13, width=10)
-        self.inversion_propability_entry.insert(0, str(defaults["inversion_probability"]))
-        self.inversion_propability_entry.pack(side="left")
-
-        row14 = tk.Frame(main_column)
-        row14.pack(fill="x")
-        tk.Label(row14, text="Maximization").pack(side="left")
+        tk.Label(row13, text="Maximization").pack(side="left")
         self.maximization_var = tk.BooleanVar(value=defaults["optimization_type"] == "max")
-        self.maximization_checkbox = tk.Checkbutton(row14, variable=self.maximization_var)
+        self.maximization_checkbox = tk.Checkbutton(row13, variable=self.maximization_var)
         self.maximization_checkbox.pack(side="left")
 
 
@@ -191,7 +183,6 @@ class MainWindow(Singleton):
             config.crossover_probability = float(self.cross_propability_entry.get())
             config.mutation_method = self.mutation_method_var.get().lower()
             config.mutation_probability = float(self.mutation_propability_entry.get())
-            config.inversion_probability = float(self.inversion_propability_entry.get())
             config.optimization_type = "max" if self.maximization_var.get() else "min"
             
             best_solution, execution_time, plotter = run_genetic_algorithm()

@@ -1,20 +1,43 @@
 import random
-from algorithms.chromosome import Chromosome
 
-def edge_mutation(chromosome: Chromosome, probability: float = 1) -> None:
-    if random.random() <= probability:
-        chromosome.change_chromosome_bit(0)
-        chromosome.change_chromosome_bit(chromosome.get_chromosome_len() - 1)
+def mutate_uniform(chromosome, position, a=-20, b=20):
+    """
+    Mutacja równomierna - zastępuje gen losową wartością z przedziału [a, b]
+
+    Args:
+        chromosome: Chromosom do mutacji
+        position: Pozycja genu do zmutowania
+        a: Dolna granica przedziału
+        b: Górna granica przedziału
+    """
+    if 0 <= position < len(chromosome):
+        # Losowa wartość z dopuszczalnego przedziału
+        chromosome[position] = random.uniform(a, b)
+    else:
+        print(f"Ostrzeżenie: Pozycja {position} poza zakresem chromosomu")
+
+    return chromosome
 
 
-def single_point_mutation(chromosome: Chromosome, probability: float = 1) -> None:
-    if random.random() <= probability:
-        mutation_point = random.randint(0, chromosome.get_chromosome_len() - 1)
-        chromosome.change_chromosome_bit(mutation_point)
-        
+def mutate_gaussian(chromosome, position, sigma=1.0, a=-20, b=20):
+    """
+    Mutacja Gaussa - dodaje do genu losową wartość z rozkładu normalnego
 
-def two_point_mutation(chromosome: Chromosome, probability: float = 1) -> None:
-    if random.random() <= probability:
-        points = random.sample(range(chromosome.get_chromosome_len()), 2)
-        for point in points:
-            chromosome.change_chromosome_bit(point)
+    Args:
+        chromosome: Chromosom do mutacji
+        position: Pozycja genu do zmutowania
+        sigma: Odchylenie standardowe dla rozkładu normalnego
+        a: Dolna granica przedziału
+        b: Górna granica przedziału
+    """
+    if 0 <= position < len(chromosome):
+        # Dodaj losową wartość z rozkładu normalnego
+        mutation = random.gauss(0, sigma)
+        chromosome[position] += mutation
+
+        # Upewnij się, że wartość pozostaje w granicach
+        chromosome[position] = max(a, min(b, chromosome[position]))
+    else:
+        print(f"Ostrzeżenie: Pozycja {position} poza zakresem chromosomu")
+
+    return chromosome

@@ -1,93 +1,47 @@
 import random
-import numpy as np
-from algorithms.chromosome import Chromosome
 
-def single_point_crossover(parent1: Chromosome, parent2: Chromosome):
-
-    if parent1 is None or parent2 is None:
-        print("Ostrzeżenie: Jeden z rodziców jest None")
-        return None, None
-    
-    if not isinstance(parent1, Chromosome) or not isinstance(parent2, Chromosome):
-        print("Ostrzeżenie: Rodzice muszą być obiektami klasy Chromosome")
-        return None, None
-        
-    if parent1.get_chromosome_len() != parent2.get_chromosome_len():
-        print("Ostrzeżenie: Chromosomy rodziców mają różne długości")
-        return None, None
-    
-    point = random.randint(1, parent1.get_chromosome_len() - 1)
-    
-    child1 = Chromosome(parent1.get_chromosome_len(), random_init=False)
-    child2 = Chromosome(parent2.get_chromosome_len(), random_init=False)
-    
-    child1_chromosome = parent1.chromosome[:point] + parent2.chromosome[point:]
-    child2_chromosome = parent2.chromosome[:point] + parent1.chromosome[point:]
-    
-    child1.set_chromosome(child1_chromosome)
-    child2.set_chromosome(child2_chromosome)
-    
+def arithmetic_crossover(parent1, parent2):
+    alpha = random.random()
+    child1 = [alpha * p1 + (1 - alpha) * p2 for p1, p2 in zip(parent1, parent2)]
+    child2 = [(1 - alpha) * p1 + alpha * p2 for p1, p2 in zip(parent1, parent2)]
     return child1, child2
 
-def two_point_crossover(parent1: Chromosome, parent2: Chromosome):
+def linear_crossover(parent1, parent2):
+    c1 = [0.5 * (p1 + p2) for p1, p2 in zip(parent1, parent2)]
+    c2 = [1.5 * p1 - 0.5 * p2 for p1, p2 in zip(parent1, parent2)]
+    c3 = [-0.5 * p1 + 1.5 * p2 for p1, p2 in zip(parent1, parent2)]
 
-    if parent1 is None or parent2 is None:
-        print("Ostrzeżenie: Jeden z rodziców jest None")
-        return None, None
-    
-    if not isinstance(parent1, Chromosome) or not isinstance(parent2, Chromosome):
-        print("Ostrzeżenie: Rodzice muszą być obiektami klasy Chromosome")
-        return None, None
-        
-    if parent1.get_chromosome_len() != parent2.get_chromosome_len():
-        print("Ostrzeżenie: Chromosomy rodziców mają różne długości")
-        return None, None
-    
-    length = parent1.get_chromosome_len()
-    
-    if length < 3:
-        print("Ostrzeżenie: Chromosomy są zbyt krótkie dla krzyżowania dwupunktowego")
-        return None, None
-    
-    point1 = random.randint(1, length - 2)
-    point2 = random.randint(point1 + 1, length - 1)
+    return c1, c2
 
-    child1 = Chromosome(length, random_init=False)
-    child2 = Chromosome(length, random_init=False)
-    
-    child1.set_chromosome(parent1.chromosome[:point1] + parent2.chromosome[point1:point2] + parent1.chromosome[point2:])
-    child2.set_chromosome(parent2.chromosome[:point1] + parent1.chromosome[point1:point2] + parent2.chromosome[point2:])
-    
+def blend_alpha_crossover(parent1, parent2, alpha=0.5):
+    child1 = []
+    child2 = []
+    for p1, p2 in zip(parent1, parent2):
+        d = abs(p1 - p2)
+        lower = min(p1, p2) - alpha * d
+        upper = max(p1, p2) + alpha * d
+        c1 = random.uniform(lower, upper)
+        c2 = random.uniform(lower, upper)
+        child1.append(c1)
+        child2.append(c2)
     return child1, child2
 
-def uniform_crossover(parent1: Chromosome, parent2: Chromosome):
-    if parent1 is None or parent2 is None:
-        print("Ostrzeżenie: Jeden z rodziców jest None")
-        return None, None
-    
-    if not isinstance(parent1, Chromosome) or not isinstance(parent2, Chromosome):
-        print("Ostrzeżenie: Rodzice muszą być obiektami klasy Chromosome")
-        return None, None
-        
-    if parent1.get_chromosome_len() != parent2.get_chromosome_len():
-        print("Ostrzeżenie: Chromosomy rodziców mają różne długości")
-        return None, None
-    
-    child1 = Chromosome(parent1.get_chromosome_len(), random_init=False)
-    child2 = Chromosome(parent2.get_chromosome_len(), random_init=False)
-    
-    new_chromosome1 = []
-    new_chromosome2 = []
-    
-    for i in range(parent1.get_chromosome_len()):
-        if random.random() < 0.5:
-            new_chromosome1.append(parent1.chromosome[i])
-            new_chromosome2.append(parent2.chromosome[i])
-        else:
-            new_chromosome1.append(parent2.chromosome[i])
-            new_chromosome2.append(parent1.chromosome[i])
-    
-    child1.set_chromosome(new_chromosome1)
-    child2.set_chromosome(new_chromosome2)
-    
+def blend_alpha_beta_crossover(parent1, parent2, alpha=0.75, beta=0.25):
+    child1 = []
+    child2 = []
+    for p1, p2 in zip(parent1, parent2):
+        d = abs(p1 - p2)
+        min_val = min(p1, p2)
+        max_val = max(p1, p2)
+        lower = min_val - alpha * d
+        upper = max_val + beta * d
+        c1 = random.uniform(lower, upper)
+        c2 = random.uniform(lower, upper)
+        child1.append(c1)
+        child2.append(c2)
+    return child1, child2
+
+def averaging_crossover(parent1, parent2):
+    child1 = [(p1 + p2) / 2 for p1, p2 in zip(parent1, parent2)]
+    child2 = [(p1 + p2) / 2 for p1, p2 in zip(parent1, parent2)]
     return child1, child2
