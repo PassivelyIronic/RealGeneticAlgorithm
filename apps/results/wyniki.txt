@@ -23,3 +23,73 @@ Wartość funkcji celu: 4.843225684318605e-07
 Czas wykonania: 0.04884529113769531 sekund
 
 ==================================================
+Najlepsze rozwiązanie: [5.002054645938431, 5.002793273531081]
+Wartość funkcji celu: 3.1569399631653015e-06
+Czas wykonania: 0.04707598686218262 sekund
+
+==================================================
+Najlepsze rozwiązanie: [5.0, 5.0]
+Wartość funkcji celu: 0.0
+Czas wykonania: 0.04892539978027344 sekund
+
+==================================================
+Najlepsze rozwiązanie: [5.0, 5.0]
+Wartość funkcji celu: 0.0
+Czas wykonania: 0.048568010330200195 sekund
+
+==================================================
+Najlepsze rozwiązanie: [5.000019087118708, 5.0000567332660095]
+Wartość funkcji celu: 2.055980266517016e-09
+Czas wykonania: 0.08380556106567383 sekund
+
+==================================================
+Najlepsze rozwiązanie: [5.051751715088134, 5.044729813824409]
+Wartość funkcji celu: 0.001083605477502152
+Czas wykonania: 0.04729437828063965 sekund
+
+==================================================
+Najlepsze rozwiązanie: [4.9999999999918, 4.999999999995024]
+Wartość funkcji celu: 2.968217617509912e-23
+Czas wykonania: 0.04787564277648926 sekund
+
+==================================================
+Najlepsze rozwiązanie: [5.0, 5.0]
+Wartość funkcji celu: 0.0
+Czas wykonania: 0.050026655197143555 sekund
+
+==================================================
+Najlepsze rozwiązanie: [5.0, 5.0]
+Wartość funkcji celu: 0.0
+Czas wykonania: 0.05073666572570801 sekund
+
+==================================================
+Najlepsze rozwiązanie: [4.999393660482514, 4.999483031429721]
+Wartość funkcji celu: 1.4818950620876105e-07
+Czas wykonania: 0.049834489822387695 sekund
+
+==================================================
+Najlepsze rozwiązanie: [5.000011607731308, 5.000021901687524]
+Wartość funkcji celu: 2.3073010684813476e-10
+Czas wykonania: 0.06321167945861816 sekund
+
+==================================================
+Najlepsze rozwiązanie: [5.0, 5.0]
+Wartość funkcji celu: 0.0
+Czas wykonania: 0.05049848556518555 sekund
+
+==================================================
+Najlepsze rozwiązanie: [5.0, 5.0]
+Wartość funkcji celu: 0.0
+Czas wykonania: 0.048485755920410156 sekund
+
+==================================================
+Najlepsze rozwiązanie: [5.000004374296299, 5.000003382988265]
+Wartość funkcji celu: 7.668854265070108e-12
+Czas wykonania: 0.04880332946777344 sekund
+
+==================================================
+Najlepsze rozwiązanie: [4.999999086686065, 4.999996928831601]
+Wartość funkcji celu: 6.420346939507424e-12
+Czas wykonania: 0.05056619644165039 sekund
+
+==================================================
