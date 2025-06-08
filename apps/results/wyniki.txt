@@ -93,3 +93,185 @@ Wartość funkcji celu: 6.420346939507424e-12
 Czas wykonania: 0.05056619644165039 sekund
 
 ==================================================
+Najlepsze rozwiązanie: [4.9999999999999964, 4.9999999999999964]
+Wartość funkcji celu: 5.609677548238306e-30
+Czas wykonania: 0.06688261032104492 sekund
+
+==================================================
+Najlepsze rozwiązanie: [4.989080457943553, 4.997423356635425]
+Wartość funkcji celu: 8.984251646268421e-05
+Czas wykonania: 0.07274460792541504 sekund
+
+==================================================
+Najlepsze rozwiązanie: [4.999224284169662, 4.998858091314576]
+Wartość funkcji celu: 5.426842941665151e-07
+Czas wykonania: 0.06690192222595215 sekund
+
+==================================================
+Najlepsze rozwiązanie: [5.0, 5.0]
+Wartość funkcji celu: 0.0
+Czas wykonania: 0.07361316680908203 sekund
+
+==================================================
+Najlepsze rozwiązanie: [4.983775872636667, 4.979719842333653]
+Wartość funkcji celu: 0.00016451391798875432
+Czas wykonania: 0.2402050495147705 sekund
+
+==================================================
+Najlepsze rozwiązanie: [4.9999995065118075, 4.999999602392098]
+Wartość funkcji celu: 9.742105785694505e-14
+Czas wykonania: 0.052594900131225586 sekund
+
+==================================================
+Najlepsze rozwiązanie: [5.0015122489262085, 5.001890311167529]
+Wartość funkcji celu: 1.4293105240326335e-06
+Czas wykonania: 0.04954957962036133 sekund
+
+==================================================
+Najlepsze rozwiązanie: [5.0, 5.0]
+Wartość funkcji celu: 0.0
+Czas wykonania: 0.4582862854003906 sekund
+
+==================================================
+Najlepsze rozwiązanie: [5.000015339703529, 5.000028783560868]
+Wartość funkcji celu: 3.9705535138726537e-10
+Czas wykonania: 0.2403876781463623 sekund
+
+==================================================
+Najlepsze rozwiązanie: [5.0, 5.0]
+Wartość funkcji celu: 0.0
+Czas wykonania: 0.5811126232147217 sekund
+
+==================================================
+Najlepsze rozwiązanie: [5.0, 5.0]
+Wartość funkcji celu: 0.0
+Czas wykonania: 0.0493772029876709 sekund
+
+==================================================
+Najlepsze rozwiązanie: [5.0, 5.0]
+Wartość funkcji celu: 0.0
+Czas wykonania: 0.23435473442077637 sekund
+
+==================================================
+Najlepsze rozwiązanie: [5.0, 5.0]
+Wartość funkcji celu: 0.0
+Czas wykonania: 0.6235089302062988 sekund
+
+==================================================
+Najlepsze rozwiązanie: [4.999999999967228, 5.000000000116776]
+Wartość funkcji celu: 2.314865632677325e-20
+Czas wykonania: 0.05196857452392578 sekund
+
+==================================================
+Najlepsze rozwiązanie: [5.0, 5.0]
+Wartość funkcji celu: 0.0
+Czas wykonania: 0.23286938667297363 sekund
+
+==================================================
+Najlepsze rozwiązanie: [5.0, 5.0]
+Wartość funkcji celu: 0.0
+Czas wykonania: 0.2894401550292969 sekund
+
+==================================================
+Najlepsze rozwiązanie: [5.000000445326225, 5.000000448712081]
+Wartość funkcji celu: 8.882307405554692e-14
+Czas wykonania: 0.050933122634887695 sekund
+
+==================================================
+Najlepsze rozwiązanie: [5.000095694554311, 5.000119618059273]
+Wartość funkcji celu: 5.723392041694148e-09
+Czas wykonania: 0.05167961120605469 sekund
+
+==================================================
+Najlepsze rozwiązanie: [5.0, 5.0]
+Wartość funkcji celu: 0.0
+Czas wykonania: 0.053948163986206055 sekund
+
+==================================================
+Najlepsze rozwiązanie: [5.0, 5.0]
+Wartość funkcji celu: 0.0
+Czas wykonania: 0.2892019748687744 sekund
+
+==================================================
+Najlepsze rozwiązanie: [5.0, 5.0]
+Wartość funkcji celu: 0.0
+Czas wykonania: 0.2705507278442383 sekund
+
+==================================================
+Najlepsze rozwiązanie: [4.999999997799215, 4.99999999689182]
+Wartość funkcji celu: 3.955045431536987e-18
+Czas wykonania: 0.28427577018737793 sekund
+
+==================================================
+Algorytm: Genetic Algorithm
+Najlepsze rozwiązanie: [4.999995749387479, 4.999994662504125]
+Wartość funkcji celu: 1.1395962378710818e-11
+Czas wykonania: 0.07 sekund
+
+==================================================
+Algorytm: Golden Jackal Optimization
+Najlepsze rozwiązanie: [4.999841193664846, 4.999959593053031]
+Wartość funkcji celu: 1.8427963097551437e-08
+Czas wykonania: 0.22 sekund
+
+==================================================
+Algorytm: Golden Jackal Optimization
+Najlepsze rozwiązanie: [4.99974380945323, 5.000060392387008]
+Wartość funkcji celu: 1.0448441166649402e-07
+Czas wykonania: 0.06 sekund
+
+==================================================
+Algorytm: Genetic Algorithm
+Najlepsze rozwiązanie: [5.000848754916538, 5.000708329176165]
+Wartość funkcji celu: 2.891094854200729e-07
+Czas wykonania: 0.06 sekund
+
+==================================================
+Algorytm: Genetic Algorithm
+Najlepsze rozwiązanie: [4.999988169097538, 4.999941371055828]
+Wartość funkcji celu: 2.741677817667113e-09
+Czas wykonania: 0.06 sekund
+
+==================================================
+Algorytm: Golden Jackal Optimization
+Najlepsze rozwiązanie: [5.000263575538186, 5.00036575939529]
+Wartość funkcji celu: 5.444848048526418e-08
+Czas wykonania: 0.05 sekund
+
+==================================================
+Algorytm: Genetic Algorithm
+Najlepsze rozwiązanie: [4.99999982864553, 4.9999998894707804]
+Wartość funkcji celu: 1.2528423838042582e-14
+Czas wykonania: 0.05 sekund
+
+==================================================
+Algorytm: Golden Jackal Optimization
+Najlepsze rozwiązanie: [5.000172048157849, 4.999984390245766]
+Wartość funkcji celu: 3.793471131477448e-08
+Czas wykonania: 0.09 sekund
+
+==================================================
+Algorytm: Golden Jackal Optimization
+Najlepsze rozwiązanie: [5.0002202466139325, 5.000095926797468]
+Wartość funkcji celu: 2.6562708552047017e-08
+Czas wykonania: 0.10 sekund
+
+==================================================
+Algorytm: Genetic Algorithm
+Najlepsze rozwiązanie: [4.983695759834493, 4.9889568576696846]
+Wartość funkcji celu: 0.00011077685369510198
+Czas wykonania: 0.06 sekund
+
+==================================================
+Algorytm: Genetic Algorithm
+Najlepsze rozwiązanie: [4.9997889392499015, 5.000015639107405]
+Wartość funkcji celu: 5.563611632895195e-08
+Czas wykonania: 0.06 sekund
+
+==================================================
+Algorytm: Golden Jackal Optimization
+Najlepsze rozwiązanie: [5.000086686296778, 5.000083236401101]
+Wartość funkcji celu: 3.220093252885934e-09
+Czas wykonania: 0.06 sekund
+
+==================================================

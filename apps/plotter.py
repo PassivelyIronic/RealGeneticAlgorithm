@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 import os
 from datetime import datetime
 from matplotlib.figure import Figure
@@ -20,6 +21,62 @@ class Plotter:
         self.best_fitness_history.append(best_fitness)
         if avg_fitness is not None:
             self.avg_fitness_history.append(avg_fitness)
+
+    def plot_categorized_batch_comparison(self, results, category_param="population_size", metric="best_fitness", save=True, show=True):
+
+        df = pd.DataFrame(results)
+        categories = sorted(df[category_param].unique())
+        algorithms = df["algorithm"].unique()
+
+        n_categories = len(categories)
+        fig, axes = plt.subplots(n_categories, 2, figsize=(14, 5 * n_categories), gridspec_kw={'width_ratios': [2, 1]})
+
+        if n_categories == 1:
+            axes = np.array([axes])
+
+        for i, category in enumerate(categories):
+            ax_plot = axes[i, 0]
+            ax_table = axes[i, 1]
+
+            subset = df[df[category_param] == category]
+            data = []
+            labels = []
+            for alg in algorithms:
+                vals = subset[subset["algorithm"] == alg][metric]
+                data.append(vals)
+                labels.append(alg)
+
+
+            ax_plot.boxplot(data, labels=labels, patch_artist=True)
+            ax_plot.set_title(f"{metric.replace('_', ' ').title()} dla {category_param} = {category}")
+            ax_plot.set_ylabel(metric.replace('_', ' ').title())
+            ax_plot.grid(True, axis='y', alpha=0.3)
+
+            summary = subset.groupby("algorithm")[metric].agg(["mean", "std"]).round(4).reset_index()
+            table_data = summary.values.tolist()
+            col_labels = ["Algorytm", "Średnia", "Odch. std."]
+
+            ax_table.axis('off')
+            table = ax_table.table(cellText=table_data, colLabels=col_labels, loc='center')
+            table.auto_set_font_size(False)
+            table.set_fontsize(10)
+            table.scale(1.2, 1.2)
+            ax_table.set_title("Podsumowanie statystyczne", fontweight="bold", pad=20)
+
+        plt.tight_layout()
+
+        if save:
+            filename = f"batch_comparison_categorized_{category_param}_{metric}.png"
+            filepath = os.path.join(self.output_dir, filename)
+            plt.savefig(filepath, dpi=300, bbox_inches='tight')
+            print(f"Zapisano wykresy i tabele do pliku: {filepath}")
+
+        if show:
+            plt.show()
+        else:
+            plt.close()
+
+        return filepath if save else None
     
     def plot_fitness_history(self, title="Historia wartości funkcji celu", save=True, show=True):
         fig = plt.figure(figsize=(10, 6))
